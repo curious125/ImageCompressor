@@ -1,0 +1,22 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "Build C and C++ DLL",
+            "type": "shell",
+            "command": "gcc -O3 -c delta_rle.c -o delta_rle.o && g++ -O3 -shared -static-libgcc -static-libstdc++ -o compressor.dll huffman_engine.cpp delta_rle.o",
+            "options": {
+                "cwd": "${workspaceFolder}",
+                "shell": {
+                    "executable": "cmd.exe",
+                    "args": ["/c"]
+                }
+            },
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "problemMatcher": ["$gcc"]
+        }
+    ]
+}
